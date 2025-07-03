@@ -2,7 +2,6 @@ import { Task } from '@serenity-js/core';
 import { Click } from '@serenity-js/web';
 import { PaginaProductos } from '../../pages/PaginaProductos';
 import { Product, TestProducts } from '../../models/TestData';
-import { TestDataUtils } from '../../utilities/TestUtils';
 
 /**
  * Tarea para agregar productos al carrito
@@ -34,8 +33,8 @@ export const AgregarProductoAlCarrito = {
     bikeLight: () =>
         AgregarProductoAlCarrito.producto(TestProducts.BIKE_LIGHT),
 
-    boltTShirt: () =>
-        AgregarProductoAlCarrito.producto(TestProducts.BOLT_TSHIRT),
+    bike_light: () =>
+        AgregarProductoAlCarrito.producto(TestProducts.BIKE_LIGHT),
 
     /**
      * Agrega múltiples productos al carrito

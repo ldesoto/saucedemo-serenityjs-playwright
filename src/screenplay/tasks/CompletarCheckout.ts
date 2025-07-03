@@ -4,7 +4,6 @@ import { PaginaProductos } from '../../pages/PaginaProductos';
 import { PaginaCarrito } from '../../pages/PaginaCarrito';
 import { PaginaCheckout } from '../../pages/PaginaCheckout';
 import { CheckoutInformation } from '../../models/TestData';
-import { TestDataUtils } from '../../utilities/TestUtils';
 
 /**
  * Información del usuario para el checkout (mantener compatibilidad)
@@ -74,14 +73,13 @@ export const CompletarCheckout = {
         ),
 
     /**
-     * Completa con información generada aleatoriamente
+     * Completa con información de prueba
      */
     conInformacionAleatoria: () => {
-        const randomUser = TestDataUtils.generateRandomUser();
         return CompletarCheckout.conInformacionModel({
-            firstName: randomUser.firstName,
-            lastName: randomUser.lastName,
-            postalCode: randomUser.postalCode
+            firstName: 'Test',
+            lastName: 'User',
+            postalCode: '12345'
         });
     },
 

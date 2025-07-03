@@ -41,16 +41,6 @@ export const TestUsers = {
         password: 'secret_sauce'
     } as UserCredentials,
 
-    ERROR_USER: {
-        username: 'error_user',
-        password: 'secret_sauce'
-    } as UserCredentials,
-
-    VISUAL_USER: {
-        username: 'visual_user', 
-        password: 'secret_sauce'
-    } as UserCredentials,
-
     INVALID_USER: {
         username: 'invalid_user',
         password: 'wrong_password'
@@ -69,12 +59,6 @@ export const TestProducts = {
         name: 'Sauce Labs Bike Light', 
         description: 'A red light isn\'t the desired state', 
         price: '$9.99' 
-    } as Product,
-    
-    BOLT_TSHIRT: { 
-        name: 'Sauce Labs Bolt T-Shirt', 
-        description: 'Get your testing superhero on', 
-        price: '$15.99' 
     } as Product
 };
 
@@ -84,11 +68,5 @@ export const CheckoutTestData = {
         firstName: 'Juan',
         lastName: 'Pérez', 
         postalCode: '28001'
-    } as CheckoutInformation,
-
-    MINIMAL_DATA: {
-        firstName: 'A',
-        lastName: 'B',
-        postalCode: '1'
     } as CheckoutInformation
 };
