@@ -1,16 +1,16 @@
-# language: en
-Feature: Checkout Process
-  As a user with products in cart
-  I want to complete the checkout process
-  So that I can finalize my order
+# language: es
+Característica: Proceso de Checkout
+  Como usuario con productos en el carrito
+  Quiero completar el proceso de checkout
+  Para finalizar mi pedido
 
-  Background:
-    Given the user is logged in to the products page
-    And they have products in the cart
+  Antecedentes:
+    Dado que el usuario está logueado en la página de productos
+    Y tiene productos en el carrito
 
-  Scenario: Complete checkout successfully
-    When they proceed to checkout
-    And they complete checkout information with:
+  Escenario: Completar checkout exitosamente
+    Cuando procede al checkout
+    Y completa la información de checkout con:
       | firstName | lastName | postalCode |
       | John      | Doe      | 12345      |
-    Then they should see the order confirmation message
+    Entonces debería ver el mensaje de confirmación del pedido

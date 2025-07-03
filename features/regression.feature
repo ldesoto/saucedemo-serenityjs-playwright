@@ -1,29 +1,29 @@
-# language: en
+# language: es
 @regression
-Feature: Regression Test Suite
-  As a QA engineer
-  I want to run a comprehensive regression suite
-  So that I can ensure all critical functionality works
+Característica: Suite de Pruebas de Regresión
+  Como ingeniero de QA
+  Quiero ejecutar una suite de regresión completa
+  Para asegurarme de que toda la funcionalidad crítica funciona
 
   @smoke @login
-  Scenario: Critical path - Complete purchase flow
-    Given the user is on the login page
-    When they enter username "standard_user" and password "secret_sauce"
-    Then they should see the products page
-    When they add product "Sauce Labs Backpack" to the cart
-    And they proceed to checkout
-    And they complete checkout information with:
+  Escenario: Flujo crítico - Flujo completo de compra
+    Dado que el usuario está en la página de login
+    Cuando ingresa usuario "standard_user" y contraseña "secret_sauce"
+    Entonces debería ver la página de productos
+    Cuando agrega el producto "Sauce Labs Backpack" al carrito
+    Y procede al checkout
+    Y completa la información de checkout con:
       | firstName | lastName | postalCode |
       | John      | Doe      | 12345      |
-    Then they should see the order confirmation message
+    Entonces debería ver el mensaje de confirmación del pedido
 
   @regression @login
-  Scenario Outline: Login with different user types
-    Given the user is on the login page
-    When they enter username "<username>" and password "<password>"
-    Then they should see "<result>"
+  Esquema del escenario: Login con diferentes tipos de usuario
+    Dado que el usuario está en la página de login
+    Cuando ingresa usuario "<username>" y contraseña "<password>"
+    Entonces debería ver "<result>"
 
-    Examples:
+    Ejemplos:
       | username                | password     | result           |
       | standard_user          | secret_sauce | products page    |
       | locked_out_user        | secret_sauce | error message    |
@@ -34,10 +34,10 @@ Feature: Regression Test Suite
       | invalid_user           | wrong_pass   | error message    |
 
   @regression @cart
-  Scenario: Cart functionality regression
-    Given the user is logged in to the products page
-    When they add product "Sauce Labs Backpack" to the cart
-    And they add product "Sauce Labs Bike Light" to the cart
-    Then the cart should show 2 products
-    When they remove product "Sauce Labs Backpack" from the cart
-    Then the cart should show 1 products
+  Escenario: Regresión de funcionalidad del carrito
+    Dado que el usuario está logueado en la página de productos
+    Cuando agrega el producto "Sauce Labs Backpack" al carrito
+    Y agrega el producto "Sauce Labs Bike Light" al carrito
+    Entonces el carrito debería mostrar 2 productos
+    Cuando remueve el producto "Sauce Labs Backpack" del carrito
+    Entonces el carrito debería mostrar 1 productos

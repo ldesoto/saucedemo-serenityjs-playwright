@@ -1,17 +1,17 @@
-# language: en
-Feature: Shopping Cart Management
-  As an authenticated user
-  I want to add products to my cart
-  So that I can proceed with my purchase
+# language: es
+Característica: Gestión del Carrito de Compras
+  Como usuario autenticado
+  Quiero agregar productos a mi carrito
+  Para poder proceder con mi compra
 
-  Background:
-    Given the user is logged in to the products page
+  Antecedentes:
+    Dado que el usuario está logueado en la página de productos
 
-  Scenario: Add a single product to cart
-    When they add product "Sauce Labs Backpack" to the cart
-    Then the cart should contain product "Sauce Labs Backpack"
+  Escenario: Agregar un producto al carrito
+    Cuando agrega el producto "Sauce Labs Backpack" al carrito
+    Entonces el carrito debería contener el producto "Sauce Labs Backpack"
 
-  Scenario: Add multiple products to cart
-    When they add product "Sauce Labs Backpack" to the cart
-    And they add product "Sauce Labs Bike Light" to the cart
-    Then the cart should show 2 products
+  Escenario: Agregar múltiples productos al carrito
+    Cuando agrega el producto "Sauce Labs Backpack" al carrito
+    Y agrega el producto "Sauce Labs Bike Light" al carrito
+    Entonces el carrito debería mostrar 2 productos

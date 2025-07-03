@@ -1,15 +1,15 @@
-# language: en
-Feature: User Login
-  As a user of the SauceDemo application
-  I want to be able to log in
-  So that I can access the products available
+# language: es
+Característica: Login de Usuario
+  Como usuario de la aplicación SauceDemo
+  Quiero poder iniciar sesión
+  Para acceder a los productos disponibles
 
-  Scenario: Successful login with valid credentials
-    Given the user is on the login page
-    When they enter username "standard_user" and password "secret_sauce"
-    Then they should see the products page
+  Escenario: Login exitoso con credenciales válidas
+    Dado que el usuario está en la página de login
+    Cuando ingresa usuario "standard_user" y contraseña "secret_sauce"
+    Entonces debería ver la página de productos
 
-  Scenario: Failed login with invalid credentials
-    Given the user is on the login page
-    When they enter username "invalid_user" and password "wrong_password"
-    Then they should see an error message
+  Escenario: Login fallido con credenciales inválidas
+    Dado que el usuario está en la página de login
+    Cuando ingresa usuario "invalid_user" y contraseña "wrong_password"
+    Entonces debería ver un mensaje de error
