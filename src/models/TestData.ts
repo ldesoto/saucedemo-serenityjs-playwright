@@ -41,6 +41,16 @@ export const TestUsers = {
         password: 'secret_sauce'
     } as UserCredentials,
 
+    ERROR_USER: {
+        username: 'error_user',
+        password: 'secret_sauce'
+    } as UserCredentials,
+
+    VISUAL_USER: {
+        username: 'visual_user',
+        password: 'secret_sauce'
+    } as UserCredentials,
+
     INVALID_USER: {
         username: 'invalid_user',
         password: 'wrong_password'

@@ -28,7 +28,9 @@ Feature: Regression Test Suite
       | standard_user          | secret_sauce | products page    |
       | locked_out_user        | secret_sauce | error message    |
       | problem_user           | secret_sauce | products page    |
-      # | performance_glitch_user| secret_sauce | products page    |
+      | performance_glitch_user| secret_sauce | products page    |
+      | error_user             | secret_sauce | products page    |
+      | visual_user            | secret_sauce | products page    |
       | invalid_user           | wrong_pass   | error message    |
 
   @regression @cart
