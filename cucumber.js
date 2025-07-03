@@ -15,7 +15,7 @@ module.exports = {
       snippetInterface: 'async-await'
     },
     tags: 'not @ignore',
-    timeout: 60000  // 60 segundos para usuarios lentos como performance_glitch_user
+    timeout: 60000  // Standard timeout for most scenarios
   },
   regression: {
     require: [
@@ -29,7 +29,7 @@ module.exports = {
       'json:reports/regression-report.json'
     ],
     tags: '@regression',
-    timeout: 90000  // 90 segundos para regresión con performance_glitch_user
+    timeout: 90000  // Extended timeout for performance_glitch_user
   },
   smoke: {
     require: [
@@ -43,6 +43,6 @@ module.exports = {
       'json:reports/smoke-report.json'
     ],
     tags: '@smoke',
-    timeout: 30000  // 30 segundos para smoke tests rápidos
+    timeout: 30000  // Quick timeout for critical path testing
   }
 };

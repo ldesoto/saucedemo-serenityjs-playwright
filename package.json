@@ -1,23 +1,27 @@
 {
-  "name": "saucedemo-serenityjs-playwright",
-  "version": "1.0.0",
-  "description": "Proyecto de pruebas E2E con Serenity/JS, Playwright y Cucumber en español",
+  "name": "saucedemo-automation",
+  "version": "1.2.0",
+  "description": "SauceDemo E2E automation suite using Serenity/JS with Playwright",
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js features/**/*.feature --profile default",
     "test:regression": "cucumber-js features/**/*.feature --profile regression",
     "test:smoke": "cucumber-js features/**/*.feature --profile smoke",
+    "test:headless": "HEADLESS=true npm run test",
+    "test:parallel": "npm run test -- --parallel 2",
+    "test:debug": "npm run test -- --fail-fast",
     "verify": "npm run clean && npm run test && npm run report",
     "clean": "rimraf target reports",
     "report": "serenity-bdd run",
-    "test:debug": "npm run test -- --fail-fast",
-    "test:parallel": "npm run test -- --parallel 2",
-    "test:headless": "HEADLESS=true npm run test",
-    "reporte": "serenity-bdd run",
     "build": "tsc",
-    "lint": "eslint src features --ext .ts",
+    "dev": "tsc --watch",
+    "lint": "eslint src features --ext .ts --fix",
+    "lint:check": "eslint src features --ext .ts",
     "format": "prettier --write 'src/**/*.ts' 'features/**/*.ts'",
-    "type-check": "tsc --noEmit"
+    "format:check": "prettier --check 'src/**/*.ts' 'features/**/*.ts'",
+    "type-check": "tsc --noEmit",
+    "pretest": "npm run type-check",
+    "posttest": "npm run report"
   },
   "keywords": [
     "serenity-js",
@@ -27,7 +31,7 @@
     "testing",
     "typescript"
   ],
-  "author": "Tu Nombre",
+  "author": "Luis De Soto <luis.desoto@qa.team>",
   "license": "MIT",
   "dependencies": {
     "@cucumber/cucumber": "^9.5.0",
