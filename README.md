@@ -129,13 +129,6 @@ Ajustados para diferentes tipos de usuario en `cucumber.js`:
 3. Agregar tasks/questions en `src/screenplay/`
 4. Actualizar page objects si es necesario
 
-### Calidad de Código
-```bash
-npm run lint        # ESLint
-npm run format      # Prettier
-npm run type-check  # TypeScript
-```
-
 ## Integración CI/CD
 
 Para entornos de CI:
