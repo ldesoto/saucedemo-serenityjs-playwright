@@ -7,8 +7,9 @@
     "test": "cucumber-js features/**/*.feature --profile default",
     "test:regression": "cucumber-js features/**/*.feature --profile regression",
     "test:smoke": "cucumber-js features/**/*.feature --profile smoke",
-    "verify": "npm run clean && npm run test",
+    "verify": "npm run clean && npm run test && npm run report",
     "clean": "rimraf target reports",
+    "report": "serenity-bdd run",
     "test:debug": "npm run test -- --fail-fast",
     "test:parallel": "npm run test -- --parallel 2",
     "test:headless": "HEADLESS=true npm run test",
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "@serenity-js/console-reporter": "^3.32.2",
+    "@serenity-js/serenity-bdd": "^3.32.2",
     "@serenity-js/web": "^3.32.2",
     "@types/node": "^20.8.0",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
