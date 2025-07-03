@@ -14,8 +14,7 @@ module.exports = {
     formatOptions: {
       snippetInterface: 'async-await'
     },
-    tags: 'not @ignore',
-    timeout: 60000  // Timeout estándar para la mayoría de escenarios
+    tags: 'not @ignore'
   },
   regression: {
     require: [
@@ -28,8 +27,7 @@ module.exports = {
       'progress-bar',
       'json:reports/regression-report.json'
     ],
-    tags: '@regression',
-    timeout: 90000  // Timeout extendido para performance_glitch_user
+    tags: '@regression'
   },
   smoke: {
     require: [
@@ -42,7 +40,6 @@ module.exports = {
       'progress-bar', 
       'json:reports/smoke-report.json'
     ],
-    tags: '@smoke',
-    timeout: 30000  // Timeout rápido para pruebas de ruta crítica
+    tags: '@smoke'
   }
 };

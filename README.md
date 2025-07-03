@@ -4,11 +4,11 @@ Framework de pruebas end-to-end para [SauceDemo](https://www.saucedemo.com/) con
 
 ## Descripción General
 
-Este proyecto proporciona cobertura completa de pruebas para la aplicación SauceDemo, implementando el patrón Screenplay para automatización de pruebas mantenible y escalable. El framework soporta múltiples tipos de usuario incluyendo pruebas de rendimiento con `performance_glitch_user`.
+Este proyecto proporciona cobertura completa de pruebas para la aplicación SauceDemo, implementando el patrón Screenplay para automatización de pruebas mantenible y escalable. 
 
 ## Stack Tecnológico
 
-- **Serenity/JS** - Framework BDD con reportes ricos
+- **Serenity/JS** - Framework BDD con reportes
 - **Playwright** - Automatización cross-browser
 - **Cucumber** - Especificaciones basadas en Gherkin
 - **TypeScript** - Desarrollo type-safe
@@ -148,13 +148,4 @@ HEADLESS=true npm run verify
 ### Usuario Performance Glitch
 El `performance_glitch_user` requiere timeouts extendidos debido a demoras simuladas. La configuración actual maneja esto automáticamente.
 
-## Contribuciones
 
-1. Seguir convenciones de TypeScript y ESLint
-2. Actualizar pruebas para nuevas funcionalidades
-3. Asegurar que todas las pruebas pasen antes de hacer commit
-4. Actualizar documentación según sea necesario
-
-## Licencia
-
-MIT

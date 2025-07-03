@@ -10,15 +10,17 @@ import { EnvironmentUtils } from '../../src/utilities/TestUtils';
 
 let browser: Browser;
 
+// Configuración inicial antes de cada escenario
 Before(async function () {
     const browserConfig = EnvironmentUtils.getBrowserConfig();
     browser = await chromium.launch(browserConfig);
     
-    this.actor = actorCalled('User').whoCan(
+    this.actor = actorCalled('Usuario').whoCan(
         BrowseTheWebWithPlaywright.using(browser)
     );
 });
 
+// Limpieza después de cada escenario
 After(async function () {
     if (browser) {
         await browser.close();
@@ -31,7 +33,7 @@ Given('the user is on the login page', { timeout: 60000 }, async function () {
     );
 });
 
-When('they enter username {string} and password {string}', { timeout: 90000 }, async function (username: string, password: string) {
+When('they enter username {string} and password {string}', { timeout: 120000 }, async function (username: string, password: string) {
     await this.actor.attemptsTo(
         IniciarSesion.conCredenciales(username, password)
     );

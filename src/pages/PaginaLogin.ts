@@ -1,8 +1,7 @@
 import { PageElement, By } from '@serenity-js/web';
 
 /**
- * Page Object para la página de inicio de sesión
- * Contiene todos los selectores y elementos de la página de login
+ * Elementos de la página de login
  */
 export class PaginaLogin {
     // Campos de entrada

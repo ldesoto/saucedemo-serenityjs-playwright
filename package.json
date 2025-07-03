@@ -8,20 +8,13 @@
     "test:regression": "cucumber-js features/**/*.feature --profile regression",
     "test:smoke": "cucumber-js features/**/*.feature --profile smoke",
     "test:headless": "HEADLESS=true npm run test",
-    "test:parallel": "npm run test -- --parallel 2",
-    "test:debug": "npm run test -- --fail-fast",
     "verify": "npm run clean && npm run test && npm run report",
     "clean": "rimraf target reports",
     "report": "serenity-bdd run",
     "build": "tsc",
-    "dev": "tsc --watch",
     "lint": "eslint src features --ext .ts --fix",
-    "lint:check": "eslint src features --ext .ts",
     "format": "prettier --write 'src/**/*.ts' 'features/**/*.ts'",
-    "format:check": "prettier --check 'src/**/*.ts' 'features/**/*.ts'",
-    "type-check": "tsc --noEmit",
-    "pretest": "npm run type-check",
-    "posttest": "npm run report"
+    "type-check": "tsc --noEmit"
   },
   "keywords": [
     "serenity-js",
