@@ -1,0 +1,53 @@
+{
+  "name": "saucedemo-serenityjs-playwright",
+  "version": "1.0.0",
+  "description": "Proyecto de pruebas E2E con Serenity/JS, Playwright y Cucumber en español",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js features/**/*.feature --profile default",
+    "test:regression": "cucumber-js features/**/*.feature --profile regression",
+    "test:smoke": "cucumber-js features/**/*.feature --profile smoke",
+    "verify": "npm run clean && npm run test",
+    "clean": "rimraf target reports",
+    "test:debug": "npm run test -- --fail-fast",
+    "test:parallel": "npm run test -- --parallel 2",
+    "test:headless": "HEADLESS=true npm run test",
+    "reporte": "serenity-bdd run",
+    "build": "tsc",
+    "lint": "eslint src features --ext .ts",
+    "format": "prettier --write 'src/**/*.ts' 'features/**/*.ts'",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "serenity-js",
+    "playwright",
+    "cucumber",
+    "e2e",
+    "testing",
+    "typescript"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "dependencies": {
+    "@cucumber/cucumber": "^9.5.0",
+    "@serenity-js/core": "^3.10.0",
+    "@serenity-js/cucumber": "^3.10.0",
+    "@serenity-js/playwright": "^3.10.0",
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {
+    "@serenity-js/console-reporter": "^3.32.2",
+    "@serenity-js/web": "^3.32.2",
+    "@types/node": "^20.8.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
