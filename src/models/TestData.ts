@@ -1,6 +1,6 @@
 /**
- * Test data models and user credentials for SauceDemo application
- * Contains all user types supported by the platform
+ * Modelos de datos de prueba y credenciales de usuario para SauceDemo
+ * Contiene todos los tipos de usuario soportados por la plataforma
  */
 
 export interface UserCredentials {
@@ -22,55 +22,55 @@ export interface Product {
 }
 
 /**
- * Standard test users provided by SauceDemo
- * Each user type simulates different scenarios and behaviors
+ * Usuarios de prueba estándar proporcionados por SauceDemo
+ * Cada tipo de usuario simula diferentes escenarios y comportamientos
  */
 export const TestUsers = {
     STANDARD_USER: {
         username: 'standard_user',
         password: 'secret_sauce',
-        description: 'Standard user with normal behavior'
+        description: 'Usuario estándar con comportamiento normal'
     } as UserCredentials,
 
     LOCKED_OUT_USER: {
         username: 'locked_out_user', 
         password: 'secret_sauce',
-        description: 'User that gets locked out after login attempt'
+        description: 'Usuario que se bloquea después del intento de login'
     } as UserCredentials,
 
     PROBLEM_USER: {
         username: 'problem_user',
         password: 'secret_sauce', 
-        description: 'User that encounters various UI issues'
+        description: 'Usuario que encuentra varios problemas de UI'
     } as UserCredentials,
 
     PERFORMANCE_GLITCH_USER: {
         username: 'performance_glitch_user',
         password: 'secret_sauce',
-        description: 'User that experiences slow page load times'
+        description: 'Usuario que experimenta tiempos de carga lentos'
     } as UserCredentials,
 
     ERROR_USER: {
         username: 'error_user',
         password: 'secret_sauce',
-        description: 'User that encounters errors during checkout'
+        description: 'Usuario que encuentra errores durante el checkout'
     } as UserCredentials,
 
     VISUAL_USER: {
         username: 'visual_user', 
         password: 'secret_sauce',
-        description: 'User for visual regression testing'
+        description: 'Usuario para pruebas de regresión visual'
     } as UserCredentials,
 
     INVALID_USER: {
         username: 'invalid_user',
         password: 'wrong_password',
-        description: 'Invalid credentials for negative testing'
+        description: 'Credenciales inválidas para pruebas negativas'
     } as UserCredentials
 };
 
 /**
- * Test products available in SauceDemo
+ * Productos de prueba disponibles en SauceDemo
  */
 export const TestProducts = {
     BACKPACK: { 
@@ -111,13 +111,13 @@ export const TestProducts = {
 };
 
 /**
- * Test checkout information
+ * Información de checkout para pruebas
  */
 export const CheckoutTestData = {
     VALID_CUSTOMER: {
-        firstName: 'John',
-        lastName: 'Doe', 
-        postalCode: '12345'
+        firstName: 'Juan',
+        lastName: 'Pérez', 
+        postalCode: '28001'
     } as CheckoutInformation,
 
     MINIMAL_DATA: {

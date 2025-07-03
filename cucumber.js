@@ -15,7 +15,7 @@ module.exports = {
       snippetInterface: 'async-await'
     },
     tags: 'not @ignore',
-    timeout: 60000  // Standard timeout for most scenarios
+    timeout: 60000  // Timeout estándar para la mayoría de escenarios
   },
   regression: {
     require: [
@@ -29,7 +29,7 @@ module.exports = {
       'json:reports/regression-report.json'
     ],
     tags: '@regression',
-    timeout: 90000  // Extended timeout for performance_glitch_user
+    timeout: 90000  // Timeout extendido para performance_glitch_user
   },
   smoke: {
     require: [
@@ -43,6 +43,6 @@ module.exports = {
       'json:reports/smoke-report.json'
     ],
     tags: '@smoke',
-    timeout: 30000  // Quick timeout for critical path testing
+    timeout: 30000  // Timeout rápido para pruebas de ruta crítica
   }
 };

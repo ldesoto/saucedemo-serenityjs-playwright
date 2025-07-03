@@ -4,43 +4,43 @@ import { PaginaLogin } from '../../pages/PaginaLogin';
 import { UserCredentials, TestUsers } from '../../models/TestData';
 
 /**
- * Login task implementation
- * Handles authentication flow for different user types
+ * Implementación de tarea de login
+ * Maneja el flujo de autenticación para diferentes tipos de usuario
  */
 export const IniciarSesion = {
     /**
-     * Performs login with provided credentials
-     * @param usuario - username 
-     * @param contrasena - password
+     * Realiza login con credenciales proporcionadas
+     * @param usuario - nombre de usuario 
+     * @param contrasena - contraseña
      */
     conCredenciales: (usuario: string, contrasena: string) =>
         Task.where(
-            `login with user "${usuario}"`,
+            `iniciar sesión con usuario "${usuario}"`,
             Enter.theValue(usuario).into(PaginaLogin.campoUsuario),
             Enter.theValue(contrasena).into(PaginaLogin.campoContrasena),
             Click.on(PaginaLogin.botonIniciarSesion)
         ),
 
     /**
-     * Login using credentials object
+     * Login usando objeto de credenciales
      */
     conCredencialesObjeto: (credentials: UserCredentials) =>
         IniciarSesion.conCredenciales(credentials.username, credentials.password),
 
     /**
-     * Standard user login (most common test case)
+     * Login de usuario estándar (caso de prueba más común)
      */
     conCredencialesEstandar: () =>
         IniciarSesion.conCredencialesObjeto(TestUsers.STANDARD_USER),
 
     /**
-     * Invalid login attempt (negative testing)
+     * Intento de login inválido (pruebas negativas)
      */
     conCredencialesInvalidas: () =>
         IniciarSesion.conCredencialesObjeto(TestUsers.INVALID_USER),
 
     /**
-     * Locked user login (access denied scenario)
+     * Login de usuario bloqueado (escenario de acceso denegado)
      */
     conUsuarioBloqueado: () =>
         IniciarSesion.conCredencialesObjeto(TestUsers.LOCKED_OUT_USER),

@@ -2,17 +2,17 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   use: {
-    headless: false,                      // Show browser UI (true for CI)
-    viewport: { width: 1280, height: 720 }, // Default browser window size
-    ignoreHTTPSErrors: true,              // Accept self-signed certs if needed
-    video: 'retain-on-failure',           // Keep videos only when tests fail
-    screenshot: 'only-on-failure',        // Take screenshots only on failure
-    trace: 'retain-on-failure',           // Collect trace only on failure
-    actionTimeout: 90000,                 // Maximum time for actions (90s for performance_glitch_user)
-    navigationTimeout: 90000,             // Maximum time for page loads  
+    headless: false,                      // Mostrar interfaz del navegador (true para CI)
+    viewport: { width: 1280, height: 720 }, // Tamaño por defecto de ventana del navegador
+    ignoreHTTPSErrors: true,              // Aceptar certificados auto-firmados si es necesario
+    video: 'retain-on-failure',           // Conservar videos solo cuando las pruebas fallan
+    screenshot: 'only-on-failure',        // Tomar capturas solo en fallos
+    trace: 'retain-on-failure',           // Recolectar trace solo en fallos
+    actionTimeout: 90000,                 // Tiempo máximo para acciones (90s para performance_glitch_user)
+    navigationTimeout: 90000,             // Tiempo máximo para carga de páginas  
   },
-  timeout: 120000,                        // Maximum time for one test step (2 minutes)
+  timeout: 120000,                        // Tiempo máximo para un paso de prueba (2 minutos)
   expect: {
-    timeout: 90000,                       // Maximum time for expect assertions
+    timeout: 90000,                       // Tiempo máximo para aserciones expect
   },
 });
