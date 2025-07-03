@@ -1,160 +1,160 @@
-# SauceDemo Automation Suite
+# Suite de Automatización SauceDemo
 
-An end-to-end test automation framework for [SauceDemo](https://www.saucedemo.com/) built with Serenity/JS, Playwright, and Cucumber.
+Framework de pruebas end-to-end para [SauceDemo](https://www.saucedemo.com/) construido con Serenity/JS, Playwright y Cucumber.
 
-## Overview
+## Descripción General
 
-This project provides comprehensive test coverage for the SauceDemo application, implementing the Screenplay pattern for maintainable and scalable test automation. The framework supports multiple user types including performance testing with `performance_glitch_user`.
+Este proyecto proporciona cobertura completa de pruebas para la aplicación SauceDemo, implementando el patrón Screenplay para automatización de pruebas mantenible y escalable. El framework soporta múltiples tipos de usuario incluyendo pruebas de rendimiento con `performance_glitch_user`.
 
-## Tech Stack
+## Stack Tecnológico
 
-- **Serenity/JS** - BDD framework with rich reporting
-- **Playwright** - Cross-browser automation 
-- **Cucumber** - Gherkin-based test specifications
-- **TypeScript** - Type-safe development
-- **Screenplay Pattern** - Actor-based test architecture
+- **Serenity/JS** - Framework BDD con reportes ricos
+- **Playwright** - Automatización cross-browser
+- **Cucumber** - Especificaciones basadas en Gherkin
+- **TypeScript** - Desarrollo type-safe
+- **Patrón Screenplay** - Arquitectura de pruebas basada en actores
 
-## Project Structure
+## Estructura del Proyecto
 
 ```
-├── features/                    # Gherkin feature files
-│   ├── login.feature           # Authentication scenarios
-│   ├── cart.feature            # Shopping cart functionality  
-│   ├── checkout.feature        # Purchase flow
-│   └── regression.feature      # Multi-user regression suite
+├── features/                    # Archivos feature de Gherkin
+│   ├── login.feature           # Escenarios de autenticación
+│   ├── cart.feature            # Funcionalidad del carrito de compras
+│   ├── checkout.feature        # Flujo de compra
+│   └── regression.feature      # Suite de regresión multi-usuario
 ├── src/
-│   ├── models/                 # Test data models
-│   ├── pages/                  # Page object classes
-│   ├── screenplay/             # Screenplay components
-│   │   ├── tasks/             # High-level user actions
-│   │   ├── questions/         # Verification queries
-│   │   └── actors/            # User personas
-│   └── utilities/             # Helper functions
-└── target/site/serenity/       # Test reports
+│   ├── models/                 # Modelos de datos de prueba
+│   ├── pages/                  # Clases de page objects
+│   ├── screenplay/             # Componentes Screenplay
+│   │   ├── tasks/             # Acciones de usuario de alto nivel
+│   │   ├── questions/         # Consultas de verificación
+│   │   └── actors/            # Personas de usuario
+│   └── utilities/             # Funciones auxiliares
+└── target/site/serenity/       # Reportes de pruebas
 ```
 
-## Test Coverage
+## Cobertura de Pruebas
 
-### Authentication
-- Valid user login flow
-- Invalid credentials handling
-- Locked user scenarios
-- Performance-constrained user testing
+### Autenticación
+- Flujo de login de usuario válido
+- Manejo de credenciales inválidas
+- Escenarios de usuario bloqueado
+- Pruebas de usuario con limitaciones de rendimiento
 
-### Shopping Cart
-- Product addition/removal
-- Cart state persistence
-- Quantity management
+### Carrito de Compras
+- Adición/eliminación de productos
+- Persistencia del estado del carrito
+- Gestión de cantidades
 
-### Checkout Process
-- Complete purchase flow
-- Form validation
-- Order confirmation
+### Proceso de Checkout
+- Flujo completo de compra
+- Validación de formularios
+- Confirmación de pedido
 
-### Regression Suite
-- Cross-user compatibility testing
-- End-to-end workflow validation
-- Performance testing scenarios
+### Suite de Regresión
+- Pruebas de compatibilidad entre usuarios
+- Validación de flujos end-to-end
+- Escenarios de pruebas de rendimiento
 
-## Quick Start
+## Inicio Rápido
 
-### Prerequisites
+### Prerrequisitos
 - Node.js 18+
-- npm or yarn
+- npm o yarn
 
-### Installation
+### Instalación
 ```bash
 npm install
 ```
 
-### Running Tests
+### Ejecutar Pruebas
 ```bash
-# Full test suite
+# Suite completa de pruebas
 npm test
 
-# Regression tests only
+# Solo pruebas de regresión
 npm run test:regression
 
 # Smoke tests
 npm run test:smoke
 
-# Generate reports
+# Generar reportes
 npm run verify
 ```
 
-### Environment Setup
-Copy `.env.example` to `.env` and configure:
+### Configuración del Entorno
+Copia `.env.example` a `.env` y configura:
 ```bash
 BASE_URL=https://www.saucedemo.com/
 HEADLESS=false
 TIMEOUT=30000
 ```
 
-## Test Data
+## Datos de Prueba
 
-The framework supports multiple user types:
-- `standard_user` - Regular user flow
-- `locked_out_user` - Access denied testing
-- `problem_user` - UI issue simulation
-- `performance_glitch_user` - Slow response testing
-- `error_user` - Error condition testing
-- `visual_user` - Visual regression testing
+El framework soporta múltiples tipos de usuario:
+- `standard_user` - Flujo de usuario regular
+- `locked_out_user` - Pruebas de acceso denegado
+- `problem_user` - Simulación de problemas de UI
+- `performance_glitch_user` - Pruebas de respuesta lenta
+- `error_user` - Pruebas de condiciones de error
+- `visual_user` - Pruebas de regresión visual
 
-## Reports
+## Reportes
 
-Test execution generates comprehensive reports:
-- **Serenity Reports**: `target/site/serenity/index.html`
-- **Cucumber Reports**: `reports/cucumber-report.html`
+La ejecución de pruebas genera reportes completos:
+- **Reportes Serenity**: `target/site/serenity/index.html`
+- **Reportes Cucumber**: `reports/cucumber-report.html`
 
-## Configuration
+## Configuración
 
-### Browser Settings
-Configure browser behavior in `playwright.config.ts`:
-- Viewport size
-- Timeout settings
-- Screenshot options
-- Video recording
+### Configuración del Navegador
+Configura el comportamiento del navegador en `playwright.config.ts`:
+- Tamaño del viewport
+- Configuración de timeouts
+- Opciones de capturas de pantalla
+- Grabación de video
 
-### Test Timeouts
-Adjusted for different user types in `cucumber.js`:
-- Default: 60s
-- Regression: 90s (accommodates performance_glitch_user)
+### Timeouts de Pruebas
+Ajustados para diferentes tipos de usuario en `cucumber.js`:
+- Por defecto: 60s
+- Regresión: 90s (acomoda performance_glitch_user)
 - Smoke: 30s
 
-## Development
+## Desarrollo
 
-### Adding New Tests
-1. Create feature file in `features/`
-2. Implement step definitions in `features/step_definitions/`
-3. Add tasks/questions in `src/screenplay/`
-4. Update page objects if needed
+### Agregar Nuevas Pruebas
+1. Crear archivo feature en `features/`
+2. Implementar step definitions en `features/step_definitions/`
+3. Agregar tasks/questions en `src/screenplay/`
+4. Actualizar page objects si es necesario
 
-### Code Quality
+### Calidad de Código
 ```bash
 npm run lint        # ESLint
 npm run format      # Prettier
 npm run type-check  # TypeScript
 ```
 
-## CI/CD Integration
+## Integración CI/CD
 
-For CI environments:
+Para entornos de CI:
 ```bash
 HEADLESS=true npm run verify
 ```
 
-## Known Issues
+## Problemas Conocidos
 
-### Performance Glitch User
-The `performance_glitch_user` requires extended timeouts due to simulated delays. Current configuration handles this automatically.
+### Usuario Performance Glitch
+El `performance_glitch_user` requiere timeouts extendidos debido a demoras simuladas. La configuración actual maneja esto automáticamente.
 
-## Contributing
+## Contribuciones
 
-1. Follow TypeScript and ESLint conventions
-2. Update tests for new features
-3. Ensure all tests pass before committing
-4. Update documentation as needed
+1. Seguir convenciones de TypeScript y ESLint
+2. Actualizar pruebas para nuevas funcionalidades
+3. Asegurar que todas las pruebas pasen antes de hacer commit
+4. Actualizar documentación según sea necesario
 
-## License
+## Licencia
 
 MIT
