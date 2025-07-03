@@ -6,16 +6,6 @@ import { PaginaCheckout } from '../../pages/PaginaCheckout';
 import { CheckoutInformation } from '../../models/TestData';
 
 /**
- * Información del usuario para el checkout (mantener compatibilidad)
- * @deprecated Usar CheckoutInformation de models/TestData.ts
- */
-export interface InformacionUsuario {
-    nombre: string;
-    apellido: string;
-    codigoPostal: string;
-}
-
-/**
  * Tarea para completar el proceso de checkout
  */
 export const CompletarCheckout = {
@@ -38,19 +28,6 @@ export const CompletarCheckout = {
         ),
 
     /**
-     * Completa la información personal del usuario
-     * @param info - información del usuario
-     */
-    conInformacion: (info: InformacionUsuario) =>
-        Task.where(
-            `#actor completa la información personal`,
-            Enter.theValue(info.nombre).into(PaginaCheckout.campoNombre),
-            Enter.theValue(info.apellido).into(PaginaCheckout.campoApellido),
-            Enter.theValue(info.codigoPostal).into(PaginaCheckout.campoCodigoPostal),
-            Click.on(PaginaCheckout.botonContinuar)
-        ),
-
-    /**
      * Finaliza la compra
      */
     finalizarCompra: () =>
@@ -60,10 +37,10 @@ export const CompletarCheckout = {
         ),
 
     /**
-     * Completa la información personal del usuario (versión con CheckoutInformation)
-     * @param info - información del usuario usando el modelo estándar
+     * Completa la información personal del usuario
+     * @param info - información del usuario usando CheckoutInformation
      */
-    conInformacionModel: (info: CheckoutInformation) =>
+    conInformacion: (info: CheckoutInformation) =>
         Task.where(
             `#actor completa la información personal`,
             Enter.theValue(info.firstName).into(PaginaCheckout.campoNombre),
@@ -76,7 +53,7 @@ export const CompletarCheckout = {
      * Completa con información de prueba
      */
     conInformacionAleatoria: () => {
-        return CompletarCheckout.conInformacionModel({
+        return CompletarCheckout.conInformacion({
             firstName: 'Test',
             lastName: 'User',
             postalCode: '12345'
@@ -84,23 +61,10 @@ export const CompletarCheckout = {
     },
 
     /**
-     * Proceso completo de checkout con información del modelo
+     * Proceso completo de checkout con información del usuario
      * @param info - información del usuario usando CheckoutInformation
      */
-    completoConInformacionModel: (info: CheckoutInformation) =>
-        Task.where(
-            `#actor completa todo el proceso de checkout`,
-            CompletarCheckout.irAlCarrito(),
-            CompletarCheckout.procederAlCheckout(),
-            CompletarCheckout.conInformacionModel(info),
-            CompletarCheckout.finalizarCompra()
-        ),
-
-    /**
-     * Proceso completo de checkout con información del usuario (mantener compatibilidad)
-     * @param info - información del usuario
-     */
-    completoConInformacion: (info: InformacionUsuario) =>
+    completoConInformacion: (info: CheckoutInformation) =>
         Task.where(
             `#actor completa todo el proceso de checkout`,
             CompletarCheckout.irAlCarrito(),

@@ -81,7 +81,7 @@ When('procede al checkout', { timeout: 60000 }, async function () {
 When('completa la información de checkout con:', { timeout: 60000 }, async function (dataTable: DataTable) {
     const data = dataTable.hashes()[0];
     await this.actor.attemptsTo(
-        CompletarCheckout.conInformacionModel({
+        CompletarCheckout.conInformacion({
             firstName: data.firstName,
             lastName: data.lastName,
             postalCode: data.postalCode
