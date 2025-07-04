@@ -15,7 +15,7 @@ export class PaginaCarrito {
         .describedAs('productos en el carrito');
 
     static readonly productoPorNombreEnCarrito = (nombre: string) => PageElement
-        .located(By.css(`.cart_item:has([data-test="inventory-item-name"]:has-text("${nombre}"))`))
+        .located(By.xpath(`//div[@class='cart_item']//div[@class='inventory_item_name'][text()='${nombre}']`))
         .describedAs(`producto ${nombre} en el carrito`);
 
     // Botones

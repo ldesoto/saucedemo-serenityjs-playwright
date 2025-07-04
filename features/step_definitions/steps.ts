@@ -2,7 +2,7 @@ import { Before, After, Given, When, Then } from '@cucumber/cucumber';
 import { actorCalled } from '@serenity-js/core';
 import { chromium, Browser } from 'playwright';
 import { BrowseTheWebWithPlaywright } from '@serenity-js/playwright';
-import { Navigate, isVisible } from '@serenity-js/web';
+import { Navigate, isVisible, Click } from '@serenity-js/web';
 import { Ensure, equals } from '@serenity-js/assertions';
 import { IniciarSesion } from '../../src/screenplay/tasks/IniciarSesion';
 import { AgregarProductoAlCarrito } from '../../src/screenplay/tasks/AgregarProductoAlCarrito';
@@ -13,6 +13,7 @@ import { CarritoTieneProducto } from '../../src/screenplay/questions/CarritoTien
 import { OrdenConfirmada } from '../../src/screenplay/questions/OrdenConfirmada';
 import { EnvironmentUtils } from '../../src/utilities/TestUtils';
 import { DataTable } from '@cucumber/cucumber';
+import { PaginaProductos } from '../../src/pages/PaginaProductos';
 
 let browser: Browser;
 
@@ -104,10 +105,10 @@ Then('debería ver un mensaje de error', { timeout: 60000 }, async function () {
 
 Then('el carrito debería contener el producto {string}', async function (productName: string) {
     await this.actor.attemptsTo(
+        Click.on(PaginaProductos.iconoCarrito),
         Ensure.that(CarritoTieneProducto.llamado(productName), isVisible())
     );
 });
-
 Then('el carrito debería mostrar {int} productos', async function (count: number) {
     await this.actor.attemptsTo(
         Ensure.that(CarritoTieneProducto.cantidad(count), equals(true))
